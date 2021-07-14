@@ -8,9 +8,11 @@ struct TreeNode {
 };
 class Solution {
 public:
-    TreeNode* rebuild(vector<int>& pre, int pre_left, int pre_right, vector<int>& vin, int vin_left, int vin_right){
-        if(pre_left > pre_right || vin_left > vin_right)
+    TreeNode* rebuild(vector<int>& pre, int pre_left, int pre_right, 
+                      vector<int>& vin, int vin_left, int vin_right){
+        if(pre_left > pre_right || vin_left > vin_right){
             return NULL;
+        }
         TreeNode* root = new TreeNode(pre[pre_left]);
         for(int i = vin_left; i <= vin_right; i++){
             if(vin[i] == root->val){
